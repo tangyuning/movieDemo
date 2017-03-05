@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>异步加载库</title>
+  <!-- load.js script.js head.js 都可以帮助我们异步的方式加载JS文件 -->
+  <script src="bower_components/script.js/dist/script.js"></script>
+  <!-- angular-loader的作用就是在使用一些异步加载脚本的库的时候，自动控制依赖顺序 -->
+  <script src="bower_components/angular-loader/angular-loader.js"></script>
+  <script>
+   
+    $script([
+      './bower_components/angular/angular.js',
+      './bower_components/angular-route/angular-route.js',
+      './movie_list/controller.js',
+      './components/http.js',
+      './components/auto-focus.js',
+      './app.js' 
+    ], function() {
+   
+      angular.bootstrap(document, ['moviecat']);
+  
+    });
+ 
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>
